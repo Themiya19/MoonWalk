@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, easeOut } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ServiceCard from './ServiceCard';
 
@@ -35,7 +35,7 @@ const Services = () => {
     scrollYProgress,
     [0, 0.5],
     [0.95, 1],
-    { ease: "easeOut" }
+    { ease: easeOut }
   );
 
   const services = [
