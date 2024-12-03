@@ -12,10 +12,31 @@ const Services = () => {
     offset: ["start end", "end start"]
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const contentOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
+  const backgroundY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", "30%"],
+    { clamp: false }
+  );
+  
+  const overlayOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.4],
+    [1, 0]
+  );
+  
+  const contentOpacity = useTransform(
+    scrollYProgress,
+    [0.1, 0.4],
+    [0, 1]
+  );
+  
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    [0.95, 1],
+    { ease: "easeOut" }
+  );
 
   const services = [
     {
